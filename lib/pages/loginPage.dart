@@ -46,7 +46,7 @@ class _AuthentificationPageState extends State<AuthentificationPage> {
     if (res.data?['status']==200) {
       //await Future.delayed(Duration(seconds: 1));
       setState(() {});
-      Navigator.pushReplacementNamed(context, Routes.QrCodeScannerRoute);
+      Navigator.pushReplacementNamed(context, Routes.HomePageRoute);
     } else {
       passwordLogin.clear();
       var msg = res.isException == true ? res.errorMsg : (res.data?['message']);

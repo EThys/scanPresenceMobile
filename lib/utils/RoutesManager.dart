@@ -13,6 +13,8 @@ class RoutesManager {
         return MaterialPageRoute(builder: (_) =>AuthentificationPage());
       case Routes.QrCodeScannerRoute:
         return MaterialPageRoute(builder: (_)=>QrcodeScan());
+      case Routes.HomePageRoute:
+        return MaterialPageRoute(builder: (_)=>HomePage());
       default:
         return MaterialPageRoute(builder: (_) =>SplashPage());
     }
