@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/Routes.dart';
 
@@ -27,23 +28,25 @@ class _HomePageState extends State<HomePage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             colors: [
-              Colors.orange,
-              Colors.yellow,
+              Colors.cyan,
+              Colors.cyan,
             ],
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 30),
             Padding(
               padding: EdgeInsets.all(55),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Bienvenue Mr l'administrateur",
-                    style: TextStyle(color: Colors.white, fontSize: 28),
+                    "Bienvenue\nMr l'administrateur",
+                    style: GoogleFonts.lato(
+                        color: Colors.white, fontSize: 28
+                    ),
                   ),
                   SizedBox(height: 10),
                 ],
@@ -64,15 +67,28 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton.icon(
-                        onPressed: () {
-                          Navigator.pushReplacementNamed(context, Routes.QrCodeScannerRoute);
-                        },
-                        icon: Icon(Icons.qr_code_scanner),
-                        label: Text('Scanner'),
-
+                      Flexible(
+                        child: ElevatedButton.icon(
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(context, Routes.QrCodeScannerRoute);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFF0E7490),
+                            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16), 
+                            textStyle: TextStyle(
+                              fontSize: 18, // Augmenter la taille de police
+                            ),
+                          ),
+                          icon: Icon(Icons.qr_code_scanner,color: Colors.white,),
+                          label: Text(
+                            'Scanner',
+                            style: GoogleFonts.lato(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),  SizedBox(height: 10,),
-                      ElevatedButton.icon(
+                      /*ElevatedButton.icon(
                         onPressed: () async {
                            _pickFile();
                         },
@@ -84,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {},
                         icon: Icon(Icons.update),
                         label: Text('Mettre à jour'),
-                      ),
+                      ),*/
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

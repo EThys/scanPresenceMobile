@@ -7,8 +7,9 @@ void showMsg(BuildContext context, bool success, String message) {
       content: Stack(
         children: [
           Container(
-            padding: EdgeInsets.all(16),
-            height: 90,
+            padding: EdgeInsets.only(right: 5,left: 5,top: 5),
+            height: 50,
+
             decoration: BoxDecoration(
               color: success ? Colors.green : Colors.red,
               borderRadius: BorderRadius.all(Radius.circular(20)),

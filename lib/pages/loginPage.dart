@@ -88,36 +88,38 @@ class _AuthentificationPageState extends State<AuthentificationPage> {
           height: 300,
 
           child: Container(
-            padding: EdgeInsets.only(top: 90, left: 20,right: 20),
+            padding: EdgeInsets.only(top: 90,),
             color: Colors.black.withOpacity(.65),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  children: [
-                    RichText(
-                      text: TextSpan(
-                          text: "Welcome to",
-                          style: GoogleFonts.lato(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 49,
-                          )
+                Center(
+                  child: Column(
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                            text: "Welcome to",
+                            style: GoogleFonts.lato(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 49,
+                            )
+                        ),
                       ),
-                    ),
 
-                    RichText(
-                      text: TextSpan(
-                        text: "Tia Presence Nayo",
-                          style: GoogleFonts.lato(
-                              color: Colors.orange,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 38
-                          ),
+                      RichText(
+                        text: TextSpan(
+                          text: "Scan Check",
+                            style: GoogleFonts.lato(
+                                color: Colors.cyan,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 38
+                            ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
 
+                  ),
                 )
               ],
             ),
@@ -202,7 +204,7 @@ class _AuthentificationPageState extends State<AuthentificationPage> {
                       }),
                   Text(
                     "Rester connecté",
-                    style: TextStyle(color: Colors.amber),
+                    style: TextStyle(color: Colors.cyan),
                   ),
                   GestureDetector(
                     child: Text(
@@ -245,7 +247,7 @@ class _AuthentificationPageState extends State<AuthentificationPage> {
             child: Text(
               "Se connecter",
               style: TextStyle(
-                  color:Colors.orange,
+                  color:Colors.cyan,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Schyler',
                   fontSize: 19),
