@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Flexible(
                         child: ElevatedButton.icon(
-                          onPressed: () {
+                          onPressed: ( ) {
                             Navigator.pushReplacementNamed(context, Routes.QrCodeScannerRoute);
                           },
                           style: ElevatedButton.styleFrom(
@@ -87,20 +87,28 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                      ),  SizedBox(height: 10,),
-                      /*ElevatedButton.icon(
-                        onPressed: () async {
-                           _pickFile();
-                        },
-                        icon: Icon(Icons.file_upload),
-                        label: Text('Importer csv'),
+                      ),  SizedBox(height: 15,),
+                      Flexible(
+                        child: ElevatedButton.icon(
+                          onPressed: ( ) {
+                            _showPasswordDialog(context);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFF0E7490),
+                            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                            textStyle: TextStyle(
+                              fontSize: 18, // Augmenter la taille de police
+                            ),
+                          ),
+                          icon: Icon(Icons.refresh_sharp,color: Colors.white,),
+                          label: Text(
+                            'Rafraichir',
+                            style: GoogleFonts.lato(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                       ),
-                      SizedBox(height: 10,),
-                      ElevatedButton.icon(
-                        onPressed: () {},
-                        icon: Icon(Icons.update),
-                        label: Text('Mettre à jour'),
-                      ),*/
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -117,6 +125,50 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+    );
+  }
+  void _showPasswordDialog(BuildContext context) {
+    final TextEditingController passwordController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Réinitialisation des Présences'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('Vous êtes sur le point de réinitialiser la liste des présences.',style: GoogleFonts.lato(),),
+              SizedBox(height: 16),
+              TextField(
+                controller: passwordController,
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Mot de passe',
+                ),
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Annuler',style: GoogleFonts.lato(
+                color: Colors.black
+              ),),
+            ),
+            TextButton(
+              onPressed: () {
+                String password = passwordController.text;
+                print('Mot de passe entré: $password');
+                Navigator.of(context).pop();
+              },
+              child: Text('Valider'),
+            ),
+          ],
+        );
+      },
     );
   }
   void _pickFile () async{

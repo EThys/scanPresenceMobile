@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 void showMsg(BuildContext context, bool success, String message) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
+      elevation: 0,
       content: Stack(
         children: [
           Container(
@@ -39,7 +40,7 @@ void showMsg(BuildContext context, bool success, String message) {
           ),
         ],
       ),
-      behavior: SnackBarBehavior.floating,
+      behavior: SnackBarBehavior.fixed,
       backgroundColor: Colors.transparent,
     ),
   );
