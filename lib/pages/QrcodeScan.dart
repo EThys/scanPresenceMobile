@@ -57,7 +57,7 @@ class _QrcodeScanState extends State<QrcodeScan> {
           child: Container(
             margin: EdgeInsets.only(top: 45),
             child: Text(
-              'DemoApp Scan',
+              'Placez votre Qr code au centre',
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,

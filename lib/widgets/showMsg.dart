@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 void showMsg(BuildContext context, bool success, String message) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
+      elevation: 0,
       content: Stack(
         children: [
           Container(
-            padding: EdgeInsets.all(16),
-            height: 90,
+            padding: EdgeInsets.only(right: 5,left: 5,top: 5),
+            height: 50,
+
             decoration: BoxDecoration(
               color: success ? Colors.green : Colors.red,
               borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -38,7 +40,7 @@ void showMsg(BuildContext context, bool success, String message) {
           ),
         ],
       ),
-      behavior: SnackBarBehavior.floating,
+      behavior: SnackBarBehavior.fixed,
       backgroundColor: Colors.transparent,
     ),
   );
