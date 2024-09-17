@@ -53,7 +53,7 @@ Future<HttpResponse> postData(String api_url, Map data, {String? token}) async {
     print(e.toString());
     print(trace.toString());
     return HttpResponse(
-        status: false, errorMsg: "Erreur inattendue", isException: true);
+        status: false, errorMsg: "Verifiez votre connexion internet", isException: true);
   }
 }
 

@@ -1,4 +1,4 @@
 class Constantes {
-  static const String BASE_URL = "http://backoffice.scancheckapp.tech";
-  static const String DefaultToken="1|QJuMsnv1WciZ0ZhgNYpykylO3N5gKqIGPGo0exLR26d50315";
+  static const String BASE_URL = "http://192.168.40.97:8000";
+  static const String DefaultToken="7|HPK4TpJQZN4ADqrE4SrM9IcQyCxsXB0dlH2W5MXR";
 }

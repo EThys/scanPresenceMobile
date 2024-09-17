@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/Routes.dart';
 
@@ -28,8 +27,8 @@ class _HomePageState extends State<HomePage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             colors: [
-              Colors.black,
-              Colors.cyan,
+              Colors.orange,
+              Colors.yellow,
             ],
           ),
         ),
@@ -43,8 +42,8 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Scan Check",
-                    style: TextStyle(color: Colors.white, fontSize: 46,fontWeight: FontWeight.bold),
+                    "Bienvenue Mr l'administrateur",
+                    style: TextStyle(color: Colors.white, fontSize: 28),
                   ),
                   SizedBox(height: 10),
                 ],
@@ -69,21 +68,17 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           Navigator.pushReplacementNamed(context, Routes.QrCodeScannerRoute);
                         },
-                        style: ElevatedButton.styleFrom(backgroundColor: Color(0xFF0E7490),padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                        textStyle: TextStyle(fontSize: 18),),
-                        icon: Icon(Icons.qr_code_scanner, color: Colors.white,),
-                        label: Text('Scanner',
-                        style: GoogleFonts.lato(color: Colors.white),
-                        ),
+                        icon: Icon(Icons.qr_code_scanner),
+                        label: Text('Scanner'),
 
                       ),  SizedBox(height: 10,),
-                      /*ElevatedButton.icon(
+                      ElevatedButton.icon(
                         onPressed: () async {
                            _pickFile();
                         },
                         icon: Icon(Icons.file_upload),
                         label: Text('Importer csv'),
-                      ),*/
+                      ),
                       SizedBox(height: 10,),
                       ElevatedButton.icon(
                         onPressed: () {},
@@ -93,6 +88,7 @@ class _HomePageState extends State<HomePage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+
 
 
                         ],
