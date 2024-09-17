@@ -204,7 +204,7 @@ class _AuthentificationPageState extends State<AuthentificationPage> {
                       }),
                   Text(
                     "Rester connecté",
-                    style: TextStyle(color: Colors.amber),
+                    style: TextStyle(color: Colors.cyan),
                   ),
                   GestureDetector(
                     child: Text(

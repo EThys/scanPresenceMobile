@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:csv/csv.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/Routes.dart';
 
@@ -27,8 +28,8 @@ class _HomePageState extends State<HomePage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             colors: [
-              Colors.orange,
-              Colors.yellow,
+              Colors.black,
+              Colors.cyan,
             ],
           ),
         ),
@@ -42,8 +43,8 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Bienvenue Mr l'administrateur",
-                    style: TextStyle(color: Colors.white, fontSize: 28),
+                    "Scan Check",
+                    style: TextStyle(color: Colors.white, fontSize: 48, fontWeight: FontWeight.bold ),
                   ),
                   SizedBox(height: 10),
                 ],
@@ -64,22 +65,42 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton.icon(
+                      Flexible(
+                        child: ElevatedButton.icon(
+                          onPressed: ( ) {
+                            Navigator.pushReplacementNamed(context, Routes.QrCodeScannerRoute);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFF0E7490),
+                            padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                            textStyle: TextStyle(
+                              fontSize: 18, // Augmenter la taille de police
+                            ),
+                          ),
+                          icon: Icon(Icons.qr_code_scanner,color: Colors.white,),
+                          label: Text(
+                            'Scanner',
+                            style: GoogleFonts.lato(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      /*ElevatedButton.icon(
                         onPressed: () {
                           Navigator.pushReplacementNamed(context, Routes.QrCodeScannerRoute);
                         },
                         icon: Icon(Icons.qr_code_scanner),
                         label: Text('Scanner'),
 
-                      ),  SizedBox(height: 10,),
-                      ElevatedButton.icon(
+                      ),*/  SizedBox(height: 20,),
+                      /*ElevatedButton.icon(
                         onPressed: () async {
                            _pickFile();
                         },
                         icon: Icon(Icons.file_upload),
                         label: Text('Importer csv'),
-                      ),
-                      SizedBox(height: 10,),
+                      ),*/
                       ElevatedButton.icon(
                         onPressed: () {},
                         icon: Icon(Icons.update),
